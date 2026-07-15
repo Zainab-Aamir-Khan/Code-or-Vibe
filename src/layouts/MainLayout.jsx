@@ -4,9 +4,9 @@ import SiteFooter from '../components/layout/SiteFooter'
 
 function MainLayout() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-h-screen bg-background text-text">
       <SiteHeader />
-      <main className="mx-auto w-full max-w-6xl px-4 py-8">
+      <main className="mx-auto w-full max-w-6xl px-4 pb-12 pt-28">
         <Outlet />
       </main>
       <SiteFooter />

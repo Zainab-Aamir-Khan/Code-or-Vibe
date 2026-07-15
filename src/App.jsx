@@ -3,6 +3,8 @@ import HomePage from './pages/HomePage'
 import BlogPage from './pages/BlogPage'
 import PostPage from './pages/PostPage'
 import AboutPage from './pages/AboutPage'
+import CategoriesPage from './pages/CategoriesPage'
+import ContactPage from './pages/ContactPage'
 import Layout from './layouts/MainLayout'
 
 function App() {
@@ -12,7 +14,9 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog/:slug" element={<PostPage />} />
+        <Route path="categories" element={<CategoriesPage />} />
         <Route path="about" element={<AboutPage />} />
+        <Route path="contact" element={<ContactPage />} />
       </Route>
     </Routes>
   )
