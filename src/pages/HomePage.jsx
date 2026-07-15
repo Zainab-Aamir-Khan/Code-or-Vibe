@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { Code2, Cpu, Sparkles, ArrowRight } from 'lucide-react'
-import featuredArticles from '../data/featuredArticles'
 
 function HomePage() {
   return (
@@ -95,56 +94,6 @@ function HomePage() {
             </div>
             <div className="pointer-events-none absolute -right-10 top-8 h-24 w-24 rounded-full bg-secondary/20 blur-3xl" aria-hidden="true" />
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="relative overflow-hidden py-20">
-      <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.12),_transparent_20%)]" aria-hidden="true" />
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 max-w-2xl space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Featured Articles</p>
-          <h2 className="text-4xl font-black tracking-[-0.04em] text-text sm:text-5xl">
-            Premium insights for the modern developer.
-          </h2>
-          <p className="text-lg leading-8 text-muted">
-            Discover curated articles on AI-assisted development, workflow mastery, and next-gen coding practices.
-          </p>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-3">
-          {featuredArticles.map((article) => (
-            <article
-              key={article.id}
-              className="group overflow-hidden rounded-[2rem] border border-white/10 bg-card/90 shadow-elevated transition duration-300 hover:-translate-y-1 hover:border-primary/30"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden bg-slate-900">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-                <span className="absolute left-4 top-4 rounded-full bg-primary/95 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-text shadow-soft">
-                  {article.category}
-                </span>
-              </div>
-
-              <div className="space-y-4 p-6">
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-semibold text-text transition group-hover:text-primary">
-                    {article.title}
-                  </h3>
-                  <p className="text-sm leading-7 text-muted">{article.excerpt}</p>
-                </div>
-
-                <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4 text-sm text-muted">
-                  <span className="font-medium text-text">{article.author}</span>
-                  <span>{article.readingTime}</span>
-                  <span>{article.publishDate}</span>
-                </div>
-              </div>
-            </article>
-          ))}
         </div>
       </div>
     </section>
