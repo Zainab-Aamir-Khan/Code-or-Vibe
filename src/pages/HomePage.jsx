@@ -202,6 +202,114 @@ function HomePage() {
     </section>
 
     <section className="relative overflow-hidden bg-background/95 py-20">
+      <div className="absolute inset-x-0 top-0 h-52 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.14),_transparent_22%)]" aria-hidden="true" />
+      <div className="absolute right-0 top-16 h-48 w-48 rounded-full bg-primary/10 blur-3xl" aria-hidden="true" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-10 rounded-[2rem] border border-white/10 bg-card/90 p-10 shadow-elevated sm:grid-cols-[1.1fr_0.9fr]">
+          <div className="space-y-6 text-text">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Newsletter</p>
+            <h2 className="text-4xl font-black tracking-[-0.04em] text-text sm:text-5xl">
+              Join the premium developer newsletter.
+            </h2>
+            <p className="max-w-xl text-lg leading-8 text-muted">
+              Get handpicked insights, releases, and AI-assisted coding tips delivered directly to your inbox.
+            </p>
+            <form className="mt-6 flex flex-col gap-4 sm:flex-row">
+              <label className="sr-only" htmlFor="newsletter-email">
+                Email address
+              </label>
+              <input
+                id="newsletter-email"
+                type="email"
+                placeholder="Enter your email"
+                className="input min-w-0 flex-1 rounded-full border-white/10 bg-white/5 px-5 py-4 text-sm text-text placeholder:text-muted focus:border-primary focus:ring-4 focus:ring-primary/10"
+              />
+              <button
+                type="button"
+                className="inline-flex h-14 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-text transition hover:bg-secondary"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-background/90 p-8">
+            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary/20 to-transparent" aria-hidden="true" />
+            <div className="relative space-y-6">
+              <div className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-muted">
+                <Sparkles className="h-5 w-5 text-primary" />
+                <span>Premium updates, no backend required.</span>
+              </div>
+              <div className="rounded-[1.5rem] bg-white/5 p-6">
+                <div className="mb-4 flex items-center justify-between text-sm text-muted">
+                  <span className="font-semibold text-text">Newsletter preview</span>
+                  <span className="rounded-full bg-primary/10 px-3 py-1 text-primary">Free</span>
+                </div>
+                <div className="space-y-4">
+                  <div className="rounded-[1.25rem] bg-background/95 p-4 text-sm text-muted shadow-soft">
+                    <p className="font-semibold text-text">Weekly digest</p>
+                    <p className="mt-2 text-sm leading-6">Top coding tips, AI prompts, and product announcements.</p>
+                  </div>
+                  <div className="rounded-[1.25rem] bg-background/95 p-4 text-sm text-muted shadow-soft">
+                    <p className="font-semibold text-text">Exclusive previews</p>
+                    <p className="mt-2 text-sm leading-6">Early access to premium guides and developer resources.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="relative overflow-hidden bg-background/95 py-20">
+      <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.12),_transparent_20%)]" aria-hidden="true" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-10 rounded-[2rem] border border-white/10 bg-card/90 p-10 text-text shadow-elevated sm:grid-cols-[1.4fr_0.6fr] lg:grid-cols-[1.5fr_0.5fr]">
+          <div className="space-y-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Ready to start?</p>
+            <h2 className="text-4xl font-black tracking-[-0.04em] text-text sm:text-5xl">
+              Dive into the blog and expand your craft.
+            </h2>
+            <p className="max-w-xl text-lg leading-8 text-muted">
+              Discover curated insights, tutorials, and powerful ideas designed for ambitious developers.
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <Link to="/blog" className="btn btn-primary inline-flex items-center justify-center gap-2">
+                Start reading
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link to="/contact" className="btn btn-secondary">
+                Contact us
+              </Link>
+            </div>
+          </div>
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-background/90 p-8">
+            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary/20 to-transparent" aria-hidden="true" />
+            <div className="relative space-y-6">
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 text-sm text-muted shadow-soft">
+                <p className="font-semibold text-text">Featured reading list</p>
+                <ul className="mt-4 space-y-4 text-sm leading-7">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-primary/10 text-primary">01</span>
+                    <span>Master AI-assisted development workflows.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-primary/10 text-primary">02</span>
+                    <span>Use practical tutorials for real projects.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-primary/10 text-primary">03</span>
+                    <span>Compare tools, patterns, and AI products.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="relative overflow-hidden bg-background/95 py-20">
       <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.12),_transparent_20%)]" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 max-w-2xl space-y-3">
