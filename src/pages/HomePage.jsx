@@ -1,10 +1,50 @@
 import { Link } from 'react-router-dom'
-import { Code2, Cpu, Sparkles, ArrowRight } from 'lucide-react'
+import { BookOpen, Code2, Cpu, Layers, MessageSquare, Sparkles, ArrowRight } from 'lucide-react'
 import ArticleCard from '../components/ui/ArticleCard'
 import featuredArticles from '../data/featuredArticles'
 import latestArticles from '../data/latestArticles'
+import popularArticles from '../data/popularArticles'
 
 function HomePage() {
+  const categoryCards = [
+    {
+      label: 'Vibe Coding',
+      description: 'Creative AI-integrated tutorials and hands-on experiments.',
+      count: '82 articles',
+      icon: Code2,
+    },
+    {
+      label: 'Traditional Coding',
+      description: 'Classic engineering patterns, algorithms, and best practices.',
+      count: '64 articles',
+      icon: Cpu,
+    },
+    {
+      label: 'Comparisons',
+      description: 'Head-to-head reviews of frameworks, tools, and AI platforms.',
+      count: '39 articles',
+      icon: Layers,
+    },
+    {
+      label: 'Tutorials',
+      description: 'Step-by-step walkthroughs for modern web applications.',
+      count: '91 articles',
+      icon: BookOpen,
+    },
+    {
+      label: 'Case Studies',
+      description: 'Real projects that show engineering decisions and outcomes.',
+      count: '45 articles',
+      icon: MessageSquare,
+    },
+    {
+      label: 'Opinions',
+      description: 'Thought leadership on the future of coding and AI.',
+      count: '29 articles',
+      icon: Sparkles,
+    },
+  ]
+
   return (
     <main>
       <section className="relative overflow-hidden py-20">
@@ -98,6 +138,65 @@ function HomePage() {
             </div>
             <div className="pointer-events-none absolute -right-10 top-8 h-24 w-24 rounded-full bg-secondary/20 blur-3xl" aria-hidden="true" />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="relative overflow-hidden bg-background/95 py-20">
+      <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.12),_transparent_20%)]" aria-hidden="true" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 max-w-2xl space-y-3">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Popular Articles</p>
+          <h2 className="text-4xl font-black tracking-[-0.04em] text-text sm:text-5xl">
+            The most-read stories right now.
+          </h2>
+          <p className="text-lg leading-8 text-muted">
+            These featured reads have been hand-selected for their premium insight and popularity.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {popularArticles.map((article) => (
+            <ArticleCard key={article.id} {...article} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="relative overflow-hidden bg-background/95 py-20">
+      <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.12),_transparent_20%)]" aria-hidden="true" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 max-w-2xl space-y-3">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Categories</p>
+          <h2 className="text-4xl font-black tracking-[-0.04em] text-text sm:text-5xl">
+            Discover the topics shaping modern development.
+          </h2>
+          <p className="text-lg leading-8 text-muted">
+            Explore focused categories for code, AI, comparison guides, tutorials, case studies, and opinion pieces.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {categoryCards.map((category) => {
+            const Icon = category.icon
+            return (
+              <div
+                key={category.label}
+                className="group overflow-hidden rounded-[1.75rem] border border-white/10 bg-card/90 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-white/5"
+              >
+                <div className="flex items-center gap-4">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-primary/10 text-primary">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <p className="text-xl font-semibold text-text">{category.label}</p>
+                    <p className="text-sm text-muted">{category.count}</p>
+                  </div>
+                </div>
+                <p className="mt-5 text-sm leading-7 text-muted">{category.description}</p>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

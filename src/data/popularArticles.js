@@ -1,0 +1,48 @@
+const popularArticles = [
+  {
+    id: '1',
+    rank: 1,
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
+    category: 'AI Workflows',
+    title: 'How AI is elevating developer workflows in 2026',
+    description: 'A deep dive into how development teams are using AI to build faster and smarter products.',
+    author: 'Riley Hart',
+    readingTime: '7 min read',
+    date: 'Jul 18, 2026',
+  },
+  {
+    id: '2',
+    rank: 2,
+    image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80',
+    category: 'UX Design',
+    title: 'Designing premium developer experiences with minimal friction',
+    description: 'Learn the key principles for building interfaces that feel elegant, fast, and reliable.',
+    author: 'Zara Brooks',
+    readingTime: '6 min read',
+    date: 'Jul 14, 2026',
+  },
+  {
+    id: '3',
+    rank: 3,
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80',
+    category: 'Developer Tools',
+    title: 'Top tools powering AI-assisted code reviews',
+    description: 'A curated selection of tools that help developers ship higher-quality code faster.',
+    author: 'Noah Liu',
+    readingTime: '5 min read',
+    date: 'Jul 10, 2026',
+  },
+  {
+    id: '4',
+    rank: 4,
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
+    category: 'Growth',
+    title: 'Scaling teams with modern documentation and AI resources',
+    description: 'Best practices for scaling engineering knowledge with documentation and automation.',
+    author: 'Aria Collins',
+    readingTime: '8 min read',
+    date: 'Jul 6, 2026',
+  },
+]
+
+export default popularArticles
