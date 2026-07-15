@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom'
 import { Code2, Cpu, Sparkles, ArrowRight } from 'lucide-react'
+import ArticleCard from '../components/ui/ArticleCard'
+import featuredArticles from '../data/featuredArticles'
+import latestArticles from '../data/latestArticles'
 
 function HomePage() {
   return (
-    <section className="relative overflow-hidden py-20">
+    <main>
+      <section className="relative overflow-hidden py-20">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.16),_transparent_22%),radial-gradient(circle_at_bottom_right,_rgba(97,45,83,0.18),_transparent_20%)]" aria-hidden="true" />
       <div className="absolute left-1/2 top-12 h-72 w-72 -translate-x-1/2 rounded-full bg-white/5 blur-3xl" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -97,6 +101,28 @@ function HomePage() {
         </div>
       </div>
     </section>
+
+    <section className="relative overflow-hidden bg-background/95 py-20">
+      <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.12),_transparent_20%)]" aria-hidden="true" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 max-w-2xl space-y-3">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Latest Articles</p>
+          <h2 className="text-4xl font-black tracking-[-0.04em] text-text sm:text-5xl">
+            Stay ahead with the newest stories.
+          </h2>
+          <p className="text-lg leading-8 text-muted">
+            Fresh articles covering AI development, design systems, tooling, and productivity for developers.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-3">
+          {latestArticles.map((article) => (
+            <ArticleCard key={article.id} {...article} />
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
   )
 }
 
