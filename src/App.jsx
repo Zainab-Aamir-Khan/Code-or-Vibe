@@ -5,6 +5,7 @@ import PostPage from './pages/PostPage'
 import AboutPage from './pages/AboutPage'
 import CategoriesPage from './pages/CategoriesPage'
 import ContactPage from './pages/ContactPage'
+import NotFoundPage from './pages/NotFoundPage'
 import Layout from './layouts/MainLayout'
 
 function App() {
