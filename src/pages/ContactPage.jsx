@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
+import { Camera, ExternalLink, Link, Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import { useState } from 'react'
 import PanelCard from '../components/ui/PanelCard'
 import SectionHeading from '../components/ui/SectionHeading'
@@ -19,9 +19,9 @@ const faqs = [
 ]
 
 const socialLinks = [
-  { label: 'LinkedIn', icon: Linkedin, href: '#', color: 'text-[#0A66C2]' },
-  { label: 'Instagram', icon: Instagram, href: '#', color: 'text-[#E1306C]' },
-  { label: 'Facebook', icon: Facebook, href: '#', color: 'text-[#1877F2]' },
+  { label: 'Website', icon: ExternalLink, href: '#', color: 'text-[#0A66C2]' },
+  { label: 'Social', icon: Camera, href: '#', color: 'text-[#E1306C]' },
+  { label: 'Blog', icon: Link, href: '#', color: 'text-[#1877F2]' },
 ]
 
 function ContactPage() {
