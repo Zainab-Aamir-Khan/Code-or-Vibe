@@ -118,7 +118,7 @@ function AboutPage() {
                   )
                 })}
               </div>
-            </div>
+            </PanelCard>
 
             <PanelCard variant="surface" className="p-8 shadow-soft">
               <p className="text-sm uppercase tracking-[0.3em] text-primary">Author</p>

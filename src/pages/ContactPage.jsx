@@ -192,6 +192,8 @@ function ContactPage() {
               </div>
             </PanelCard>
           </div>
+          </PanelCard>
+          <div>
           <PanelCard variant="surface" className="space-y-6 p-6">
             <p className="text-sm uppercase tracking-[0.3em] text-primary">Need help?</p>
             <p className="text-lg font-semibold text-text">Reach out for media requests, sponsorships, or editorial questions.</p>
