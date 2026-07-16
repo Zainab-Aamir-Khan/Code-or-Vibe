@@ -1,4 +1,4 @@
-import { Award, BookOpen, Compass, Layers, Sparkles, Users } from 'lucide-react'
+import { Compass, Layers, Sparkles, Users } from 'lucide-react'
 import PanelCard from '../components/ui/PanelCard'
 import SectionHeading from '../components/ui/SectionHeading'
 
@@ -120,9 +120,9 @@ function AboutPage() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-background/95 p-8 shadow-soft">
+            <PanelCard variant="surface" className="p-8 shadow-soft">
               <p className="text-sm uppercase tracking-[0.3em] text-primary">Author</p>
-              <div className="mt-6 flex flex-col gap-5 rounded-[1.75rem] border border-white/10 bg-card/90 p-6">
+              <PanelCard className="mt-6 flex flex-col gap-5 p-6">
                 <div className="flex items-center gap-4">
                   <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-primary/10 text-primary">
                     <span className="text-xl font-black">Z</span>
