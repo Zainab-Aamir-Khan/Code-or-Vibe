@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import posts from '../data/posts'
+import TableOfContents from '../components/ui/TableOfContents'
 
 function PostPage() {
   const { slug } = useParams()
@@ -115,6 +116,15 @@ function PostPage() {
           </article>
 
           <aside className="space-y-6">
+            <TableOfContents
+              items={[
+                { id: 'modern-reading-experience', title: 'A modern reading experience', subtitle: 'Storytelling & insight' },
+                { id: 'what-youll-learn', title: 'What you’ll learn', subtitle: 'Outcomes & value' },
+                { id: 'why-it-works', title: 'Why it works', subtitle: 'Structure & focus' },
+                { id: 'engineering-guidance', title: 'Guidance for engineering teams', subtitle: 'Best practices' },
+              ]}
+            />
+
             <div className="rounded-[2rem] border border-white/10 bg-card/90 p-6 shadow-elevated">
               <p className="text-sm uppercase tracking-[0.24em] text-primary">Article details</p>
               <div className="mt-6 space-y-4 text-sm leading-7 text-muted">
