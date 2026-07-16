@@ -122,7 +122,7 @@ function ContactPage() {
                 </button>
               </div>
             </form>
-          </div>
+          </PanelCard>
 
           <aside className="space-y-8">
             <PanelCard className="p-8 shadow-elevated">
