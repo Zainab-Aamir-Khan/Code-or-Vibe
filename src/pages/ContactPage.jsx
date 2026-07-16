@@ -158,9 +158,9 @@ function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-background/95 p-8 shadow-soft">
+            <PanelCard variant="surface" className="p-8 shadow-soft">
               <p className="text-sm uppercase tracking-[0.3em] text-primary">Office location</p>
-              <div className="mt-6 space-y-4 rounded-[1.75rem] border border-white/10 bg-card/90 p-6 shadow-soft">
+              <PanelCard className="mt-6 space-y-4 p-6 shadow-soft">
                 <div className="flex items-center gap-3 text-sm text-muted">
                   <MapPin className="h-4 w-4 text-primary" />
                   <span>Remote-first, US-based team</span>
