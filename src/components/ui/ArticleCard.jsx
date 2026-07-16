@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function ArticleCard({ image, category, title, description, author, readingTime, date, rank }) {
+function ArticleCard({ image, category, title, description, author, readingTime, date, rank, slug }) {
   return (
     <article className="group overflow-hidden rounded-[2rem] border border-white/10 bg-card/90 shadow-elevated transition duration-300 hover:-translate-y-1 hover:border-primary/30">
       <div className="relative aspect-[4/3] overflow-hidden bg-slate-900">
@@ -25,7 +25,7 @@ function ArticleCard({ image, category, title, description, author, readingTime,
           <span>{date}</span>
         </div>
         <Link
-          to="/blog"
+          to={slug ? `/blog/${slug}` : '/blog'}
           className="inline-flex items-center justify-center rounded-full bg-white/5 px-4 py-3 text-sm font-semibold text-text transition hover:bg-primary/90 hover:text-white"
         >
           Read More
