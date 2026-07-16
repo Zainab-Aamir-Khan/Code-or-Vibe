@@ -1,11 +1,13 @@
 import { Link, useParams } from 'react-router-dom'
 import posts from '../data/posts'
+import ArticleCard from '../components/ui/ArticleCard'
 import ReadingProgress from '../components/ui/ReadingProgress'
 import TableOfContents from '../components/ui/TableOfContents'
 
 function PostPage() {
   const { slug } = useParams()
   const post = posts.find((item) => item.slug === slug)
+  const relatedPosts = posts.filter((item) => item.slug !== slug).slice(0, 3)
 
   if (!post) {
     return (
@@ -113,6 +115,20 @@ function PostPage() {
                 <p>
                   The responsive layout shifts cleanly from a two-column hero into a strong single-column reading experience on smaller devices, while preserving spacing and premium polish.
                 </p>
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-white/10 bg-background/95 p-8 shadow-elevated">
+              <div className="mb-8 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.24em] text-primary">Related posts</p>
+                  <h2 className="mt-3 text-3xl font-black text-text">More articles to explore</h2>
+                </div>
+              </div>
+              <div className="grid gap-6 md:grid-cols-3">
+                {relatedPosts.map((related) => (
+                  <ArticleCard key={related.id} {...related} />
+                ))}
               </div>
             </div>
           </article>
