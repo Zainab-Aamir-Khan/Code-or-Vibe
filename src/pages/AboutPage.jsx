@@ -128,7 +128,7 @@ function AboutPage() {
                     <span className="text-xl font-black">Z</span>
                   </div>
                   <div>
-                    <p className="text-xl font-semibold text-text">Zainab Malik</p>
+                    <p className="text-xl font-semibold text-text">Zainab Aamir</p>
                     <p className="text-sm text-muted">Creator & Editor</p>
                   </div>
                 </div>
