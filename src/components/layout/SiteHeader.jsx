@@ -8,7 +8,7 @@ function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-background/95 shadow-soft backdrop-blur-xl transition duration-300">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <Link to="/" className="flex items-center gap-3 text-xl font-semibold tracking-tight text-text">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary shadow-elevated">
             <span className="text-base font-black">B</span>
@@ -16,7 +16,7 @@ function SiteHeader() {
           <span>BlogStudio</span>
         </Link>
 
-        <nav className="hidden items-center justify-between gap-8 lg:flex">
+        <nav className="hidden items-center justify-between gap-8 lg:flex" aria-label="Primary navigation">
           <div className="flex items-center gap-1.5 text-sm font-medium">
             {navItems.map((item) => (
               <NavLink
@@ -26,7 +26,7 @@ function SiteHeader() {
                   `relative inline-flex items-center px-1.5 py-2 transition ${
                     isActive
                       ? 'text-text before:absolute before:-bottom-1 before:left-0 before:h-0.5 before:w-full before:rounded-full before:bg-primary'
-                      : 'text-muted hover:text-text'
+                      : 'text-muted hover:text-text focus-visible:text-text'
                   }`
                 }
               >
@@ -51,7 +51,9 @@ function SiteHeader() {
 
         <button
           onClick={() => setOpen((prev) => !prev)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-text transition hover:bg-white/10 lg:hidden"
+          aria-controls="mobile-menu"
+          aria-expanded={open}
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-text transition hover:bg-white/10 lg:hidden focus-visible:ring-4 focus-visible:ring-primary/20"
           aria-label="Toggle menu"
           type="button"
         >
@@ -60,7 +62,12 @@ function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-background/98 px-4 pb-6 text-text shadow-soft lg:hidden">
+        <div
+          id="mobile-menu"
+          role="menu"
+          aria-label="Mobile navigation"
+          className="border-t border-white/10 bg-background/98 px-4 pb-6 text-text shadow-soft lg:hidden"
+        >
           <div className="space-y-2 pt-4">
             {navItems.map((item) => (
               <NavLink
@@ -69,7 +76,7 @@ function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   `block rounded-2xl px-4 py-3 text-base font-medium transition ${
-                    isActive ? 'bg-white/10 text-text' : 'text-muted hover:bg-white/5 hover:text-text'
+                    isActive ? 'bg-white/10 text-text' : 'text-muted hover:bg-white/5 hover:text-text focus-visible:bg-white/10 focus-visible:text-text'
                   }`
                 }
               >

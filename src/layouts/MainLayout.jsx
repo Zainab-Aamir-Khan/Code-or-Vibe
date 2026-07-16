@@ -6,7 +6,7 @@ function MainLayout() {
   return (
     <div className="min-h-screen bg-background text-text">
       <SiteHeader />
-      <main className="mx-auto w-full max-w-6xl px-4 pb-12 pt-28">
+      <main className="container mx-auto pb-12 pt-24 sm:pt-28">
         <Outlet />
       </main>
       <SiteFooter />

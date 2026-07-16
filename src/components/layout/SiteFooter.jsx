@@ -4,7 +4,7 @@ import { GitBranch, MessageCircle, Share2 } from 'lucide-react'
 function SiteFooter() {
   return (
     <footer className="bg-background border-t border-white/10 text-text">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="container mx-auto py-16">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div className="space-y-5">
             <div className="flex items-center gap-3 text-xl font-black tracking-tight text-text">
