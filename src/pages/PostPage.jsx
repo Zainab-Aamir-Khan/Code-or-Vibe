@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import posts from '../data/posts'
 import ArticleCard from '../components/ui/ArticleCard'
+import CommentsSection from '../components/ui/CommentsSection'
 import ReadingProgress from '../components/ui/ReadingProgress'
 import TableOfContents from '../components/ui/TableOfContents'
 
@@ -117,7 +118,7 @@ function PostPage() {
                 </p>
               </div>
             </div>
-
+            <CommentsSection />
             <div className="rounded-[2rem] border border-white/10 bg-background/95 p-8 shadow-elevated">
               <div className="mb-8 flex items-center justify-between gap-4">
                 <div>
