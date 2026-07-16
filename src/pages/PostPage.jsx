@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import posts from '../data/posts'
+import ReadingProgress from '../components/ui/ReadingProgress'
 import TableOfContents from '../components/ui/TableOfContents'
 
 function PostPage() {
@@ -32,6 +33,7 @@ function PostPage() {
 
   return (
     <main className="bg-background text-text">
+      <ReadingProgress />
       <section className="relative overflow-hidden pb-24 pt-16">
         <div className="absolute inset-x-0 top-0 h-56 bg-[radial-gradient(circle_at_top,_rgba(134,57,83,0.14),_transparent_25%)]" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
