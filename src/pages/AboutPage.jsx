@@ -1,4 +1,6 @@
 import { Award, BookOpen, Compass, Layers, Sparkles, Users } from 'lucide-react'
+import PanelCard from '../components/ui/PanelCard'
+import SectionHeading from '../components/ui/SectionHeading'
 
 function AboutPage() {
   return (
@@ -7,73 +9,69 @@ function AboutPage() {
         <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,_rgba(97,45,83,0.14),_transparent_25%)]" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-[0.9fr_0.7fr] lg:items-end">
-            <div className="space-y-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-primary">About</p>
-              <h1 className="max-w-3xl text-5xl font-black tracking-[-0.04em] text-text sm:text-6xl">
-                Crafting premium developer stories with clarity and purpose.
-              </h1>
-              <p className="max-w-2xl text-lg leading-8 text-muted sm:text-xl">
-                Our mission is to make technical content feel modern, focused, and inspiring for teams building the future of software.
-              </p>
-            </div>
-            <div className="rounded-[2rem] border border-white/10 bg-card/90 p-8 shadow-elevated">
-              <div className="space-y-4">
-                <p className="text-sm uppercase tracking-[0.28em] text-primary">Quick focus</p>
-                <div className="rounded-[1.75rem] bg-background/95 p-6 shadow-soft">
-                  <p className="text-sm leading-7 text-muted">
-                    Premium blog experiences combine thoughtful structure, beautiful typography, and meaningful stories that support every stage of the developer journey.
-                  </p>
-                </div>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {[
-                    { label: 'Premium tone', value: 'Clear and confident' },
-                    { label: 'Audience', value: 'Developers & teams' },
-                  ].map((item) => (
-                    <div key={item.label} className="rounded-3xl border border-white/10 bg-white/5 p-4 text-sm text-muted">
-                      <p className="font-semibold text-text">{item.label}</p>
-                      <p className="mt-2">{item.value}</p>
-                    </div>
-                  ))}
-                </div>
+            <SectionHeading
+            eyebrow="About"
+            title="Crafting premium developer stories with clarity and purpose."
+            description="Our mission is to make technical content feel modern, focused, and inspiring for teams building the future of software."
+            titleAs="h1"
+            className="space-y-6"
+          />
+            <PanelCard className="space-y-4 shadow-elevated">
+              <p className="text-sm uppercase tracking-[0.28em] text-primary">Quick focus</p>
+              <div className="rounded-[1.75rem] bg-background/95 p-6 shadow-soft">
+                <p className="text-sm leading-7 text-muted">
+                  Premium blog experiences combine thoughtful structure, beautiful typography, and meaningful stories that support every stage of the developer journey.
+                </p>
               </div>
-            </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  { label: 'Premium tone', value: 'Clear and confident' },
+                  { label: 'Audience', value: 'Developers & teams' },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-3xl border border-white/10 bg-white/5 p-4 text-sm text-muted">
+                    <p className="font-semibold text-text">{item.label}</p>
+                    <p className="mt-2">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </PanelCard>
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          <div className="space-y-10 rounded-[2rem] border border-white/10 bg-card/90 p-10 shadow-elevated">
+          <PanelCard className="space-y-10 shadow-elevated">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-3 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
                 <Sparkles className="h-4 w-4" /> Mission & Vision
               </div>
               <div className="grid gap-6 sm:grid-cols-2">
-                <div className="rounded-[1.75rem] border border-white/10 bg-background/95 p-6">
+                <PanelCard variant="surface" className="p-6">
                   <p className="text-sm uppercase tracking-[0.3em] text-primary">Mission</p>
                   <p className="mt-4 text-lg leading-8 text-text">
                     To elevate developer learning and storytelling through elegant, intelligent content that empowers teams to build with confidence.
                   </p>
-                </div>
-                <div className="rounded-[1.75rem] border border-white/10 bg-background/95 p-6">
+                </PanelCard>
+                <PanelCard variant="surface" className="p-6">
                   <p className="text-sm uppercase tracking-[0.3em] text-primary">Vision</p>
                   <p className="mt-4 text-lg leading-8 text-text">
                     To become the go-to resource for premium engineering narratives, blending thoughtful strategy, practical insight, and modern design.
                   </p>
-                </div>
+                </PanelCard>
               </div>
             </div>
 
             <div className="space-y-6">
               <p className="text-sm uppercase tracking-[0.3em] text-primary">Our story</p>
-              <div className="rounded-[1.75rem] bg-background/95 p-8 shadow-soft">
+              <PanelCard variant="surface" className="p-8 shadow-soft">
                 <p className="text-lg leading-8 text-text">
                   Founded at the intersection of craftsmanship and emerging AI workflows, our blog grew from a desire to document engineering work in a way that feels premium and practical. Each story is designed for developers who care deeply about both code quality and user experience.
                 </p>
                 <p className="mt-4 text-sm leading-7 text-muted">
                   We believe technical content should be easy to scan, delightful to read, and grounded in real-world value. That’s why every section, example, and layout is built for clarity.
                 </p>
-              </div>
+              </PanelCard>
             </div>
 
             <div className="space-y-6">
@@ -95,10 +93,10 @@ function AboutPage() {
                 ))}
               </div>
             </div>
-          </div>
+          </PanelCard>
 
           <aside className="space-y-8">
-            <div className="rounded-[2rem] border border-white/10 bg-card/90 p-8 shadow-elevated">
+            <PanelCard className="p-8 shadow-elevated">
               <p className="text-sm uppercase tracking-[0.3em] text-primary">Core Values</p>
               <div className="mt-6 space-y-4">
                 {[
@@ -147,8 +145,8 @@ function AboutPage() {
                     <p className="mt-2 text-muted">Intentional clarity</p>
                   </div>
                 </div>
-              </div>
-            </div>
+              </PanelCard>
+            </PanelCard>
           </aside>
         </div>
       </section>

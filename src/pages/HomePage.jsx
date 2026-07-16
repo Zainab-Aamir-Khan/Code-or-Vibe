@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom'
 import { BookOpen, Code2, Cpu, Layers, MessageSquare, Sparkles, ArrowRight } from 'lucide-react'
 import ArticleCard from '../components/ui/ArticleCard'
+import CategoryCard from '../components/ui/CategoryCard'
+import InfoCard from '../components/ui/InfoCard'
+import PanelCard from '../components/ui/PanelCard'
+import SectionHeading from '../components/ui/SectionHeading'
 import featuredArticles from '../data/featuredArticles'
 import latestArticles from '../data/latestArticles'
 import popularArticles from '../data/popularArticles'
@@ -58,14 +62,11 @@ function HomePage() {
               Premium developer learning for modern teams
             </div>
 
-            <div className="space-y-6">
-              <h1 className="max-w-3xl text-5xl font-black leading-[1.02] tracking-[-0.04em] text-text sm:text-6xl">
-                Code or Vibe
-              </h1>
-              <p className="max-w-2xl text-lg leading-8 text-muted sm:text-xl">
-                Traditional Coding. AI-Assisted Development. Learn Both.
-              </p>
-            </div>
+            <SectionHeading
+              title="Code or Vibe"
+              description="Traditional Coding. AI-Assisted Development. Learn Both."
+              className="space-y-6"
+            />
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <Link to="/blog" className="btn btn-primary">
@@ -82,27 +83,14 @@ function HomePage() {
                 { label: '250+', value: 'Guides & tutorials', icon: Code2 },
                 { label: '1.8k', value: 'Developers onboarded', icon: Cpu },
                 { label: '4.9/5', value: 'Average satisfaction', icon: Sparkles },
-              ].map((item) => {
-                const Icon = item.icon
-                return (
-                  <div key={item.label} className="card card-plain card-body border border-white/10 bg-card/90">
-                    <div className="flex items-center gap-3">
-                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-primary shadow-soft">
-                        <Icon className="h-5 w-5" />
-                      </span>
-                      <div>
-                        <p className="text-2xl font-semibold text-text">{item.label}</p>
-                        <p className="text-sm text-muted">{item.value}</p>
-                      </div>
-                    </div>
-                  </div>
-                )
-              })}
+              ].map((item) => (
+                <InfoCard key={item.label} {...item} />
+              ))}
             </div>
           </div>
 
           <div className="relative">
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-card/90 p-6 shadow-elevated">
+            <PanelCard className="relative overflow-hidden shadow-elevated">
               <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary/20 to-transparent" aria-hidden="true" />
               <div className="relative grid gap-6 rounded-[1.75rem] border border-white/10 bg-background/95 p-6">
                 <div className="flex items-center justify-between rounded-3xl bg-white/5 p-4 text-sm text-muted">
@@ -135,7 +123,7 @@ function HomePage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </PanelCard>
             <div className="pointer-events-none absolute -right-10 top-8 h-24 w-24 rounded-full bg-secondary/20 blur-3xl" aria-hidden="true" />
           </div>
         </div>
@@ -145,15 +133,12 @@ function HomePage() {
     <section className="relative overflow-hidden bg-background/95 py-20">
       <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.12),_transparent_20%)]" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 max-w-2xl space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Popular Articles</p>
-          <h2 className="text-4xl font-black tracking-[-0.04em] text-text sm:text-5xl">
-            The most-read stories right now.
-          </h2>
-          <p className="text-lg leading-8 text-muted">
-            These featured reads have been hand-selected for their premium insight and popularity.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Popular Articles"
+          title="The most-read stories right now."
+          description="These featured reads have been hand-selected for their premium insight and popularity."
+          className="mb-10 max-w-2xl"
+        />
 
         <div className="grid gap-6 lg:grid-cols-2">
           {popularArticles.map((article) => (
@@ -166,37 +151,23 @@ function HomePage() {
     <section className="relative overflow-hidden bg-background/95 py-20">
       <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.12),_transparent_20%)]" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 max-w-2xl space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Categories</p>
-          <h2 className="text-4xl font-black tracking-[-0.04em] text-text sm:text-5xl">
-            Discover the topics shaping modern development.
-          </h2>
-          <p className="text-lg leading-8 text-muted">
-            Explore focused categories for code, AI, comparison guides, tutorials, case studies, and opinion pieces.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Categories"
+          title="Discover the topics shaping modern development."
+          description="Explore focused categories for code, AI, comparison guides, tutorials, case studies, and opinion pieces."
+          className="mb-10 max-w-2xl"
+        />
 
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-          {categoryCards.map((category) => {
-            const Icon = category.icon
-            return (
-              <div
-                key={category.label}
-                className="group overflow-hidden rounded-[1.75rem] border border-white/10 bg-card/90 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-white/5"
-              >
-                <div className="flex items-center gap-4">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <div>
-                    <p className="text-xl font-semibold text-text">{category.label}</p>
-                    <p className="text-sm text-muted">{category.count}</p>
-                  </div>
-                </div>
-                <p className="mt-5 text-sm leading-7 text-muted">{category.description}</p>
-              </div>
-            )
-          })}
+          {categoryCards.map((category) => (
+            <CategoryCard
+              key={category.label}
+              title={category.label}
+              description={category.description}
+              count={category.count}
+              icon={category.icon}
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -312,15 +283,12 @@ function HomePage() {
     <section className="relative overflow-hidden bg-background/95 py-20">
       <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.12),_transparent_20%)]" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 max-w-2xl space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Latest Articles</p>
-          <h2 className="text-4xl font-black tracking-[-0.04em] text-text sm:text-5xl">
-            Stay ahead with the newest stories.
-          </h2>
-          <p className="text-lg leading-8 text-muted">
-            Fresh articles covering AI development, design systems, tooling, and productivity for developers.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Latest Articles"
+          title="Stay ahead with the newest stories."
+          description="Fresh articles covering AI development, design systems, tooling, and productivity for developers."
+          className="mb-10 max-w-2xl"
+        />
 
         <div className="grid gap-6 lg:grid-cols-3">
           {latestArticles.map((article) => (

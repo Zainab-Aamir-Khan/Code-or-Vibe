@@ -1,5 +1,7 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import { useState } from 'react'
+import PanelCard from '../components/ui/PanelCard'
+import SectionHeading from '../components/ui/SectionHeading'
 
 const faqs = [
   {
@@ -44,34 +46,30 @@ function ContactPage() {
         <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,_rgba(133,57,83,0.14),_transparent_25%)]" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_0.6fr] lg:items-end">
-            <div className="space-y-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-primary">Contact</p>
-              <h1 className="max-w-3xl text-5xl font-black tracking-[-0.04em] text-text sm:text-6xl">
-                Connect with the team behind the premium developer blog.
-              </h1>
-              <p className="max-w-2xl text-lg leading-8 text-muted sm:text-xl">
-                Have a question, partnership idea, or feedback? Send a message below, and we’ll get back to you soon.
-              </p>
-            </div>
-            <div className="rounded-[2rem] border border-white/10 bg-card/90 p-8 shadow-elevated">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
-                  <Mail className="h-4 w-4" /> Contact details
-                </div>
-                <div className="space-y-3 text-sm text-muted">
-                  <p>hello@premiumblog.dev</p>
-                  <p>Mon–Fri, 9am–6pm</p>
-                  <p>Remote-first studio</p>
-                </div>
+            <SectionHeading
+            eyebrow="Contact"
+            title="Connect with the team behind the premium developer blog."
+            description="Have a question, partnership idea, or feedback? Send a message below, and we’ll get back to you soon."
+            titleAs="h1"
+            className="space-y-6"
+          />
+            <PanelCard className="space-y-4 p-8 shadow-elevated">
+              <div className="flex items-center gap-3 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                <Mail className="h-4 w-4" /> Contact details
               </div>
-            </div>
+              <div className="space-y-3 text-sm text-muted">
+                <p>hello@premiumblog.dev</p>
+                <p>Mon–Fri, 9am–6pm</p>
+                <p>Remote-first studio</p>
+              </div>
+            </PanelCard>
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
         <div className="grid gap-10 xl:grid-cols-[1.2fr_0.8fr]">
-          <div className="space-y-8 rounded-[2rem] border border-white/10 bg-card/90 p-10 shadow-elevated">
+          <PanelCard className="space-y-8 p-10 shadow-elevated">
             <div className="space-y-6">
               <p className="text-sm uppercase tracking-[0.3em] text-primary">Send a message</p>
               <h2 className="text-3xl font-black text-text">Let’s start the conversation.</h2>
@@ -177,28 +175,28 @@ function ContactPage() {
                     <span>Email: hello@premiumblog.dev</span>
                   </div>
                 </div>
-              </div>
-            </div>
+              </PanelCard>
+            </PanelCard>
           </aside>
         </div>
 
-        <div className="mt-10 grid gap-6 rounded-[2rem] border border-white/10 bg-card/90 p-8 shadow-elevated sm:grid-cols-[1.2fr_0.8fr]">
+        <PanelCard className="mt-10 grid gap-6 p-8 shadow-elevated sm:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-6">
             <p className="text-sm uppercase tracking-[0.3em] text-primary">Map placeholder</p>
-            <div className="h-80 rounded-[1.75rem] border border-white/10 bg-background/95 p-6 text-muted">
+            <PanelCard variant="surface" className="h-80 p-6 text-muted">
               <div className="flex h-full flex-col items-center justify-center rounded-[1.5rem] border-2 border-dashed border-white/10 bg-white/5 text-center text-sm text-muted">
                 <span className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-primary">
                   <MapPin className="h-6 w-6" />
                 </span>
                 <p className="max-w-xs">Google Maps placeholder area. Replace with an embedded map or external map component later.</p>
               </div>
-            </div>
+            </PanelCard>
           </div>
-          <div className="space-y-6 rounded-[1.75rem] border border-white/10 bg-background/95 p-6">
+          <PanelCard variant="surface" className="space-y-6 p-6">
             <p className="text-sm uppercase tracking-[0.3em] text-primary">Need help?</p>
             <p className="text-lg font-semibold text-text">Reach out for media requests, sponsorships, or editorial questions.</p>
             <p className="text-sm leading-7 text-muted">This frontend demo includes the complete contact interface, FAQs, and social links without backend submission.</p>
-          </div>
+          </PanelCard>
         </div>
       </section>
     </main>
