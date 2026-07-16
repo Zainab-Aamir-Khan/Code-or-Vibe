@@ -125,7 +125,7 @@ function ContactPage() {
           </div>
 
           <aside className="space-y-8">
-            <div className="rounded-[2rem] border border-white/10 bg-background/95 p-8 shadow-elevated">
+            <PanelCard className="p-8 shadow-elevated">
               <p className="text-sm uppercase tracking-[0.3em] text-primary">FAQ</p>
               <div className="mt-6 space-y-4">
                 {faqs.map((faq) => (
@@ -135,9 +135,9 @@ function ContactPage() {
                   </details>
                 ))}
               </div>
-            </div>
+            </PanelCard>
 
-            <div className="rounded-[2rem] border border-white/10 bg-card/90 p-8 shadow-soft">
+            <PanelCard className="p-8 shadow-soft">
               <p className="text-sm uppercase tracking-[0.3em] text-primary">Social links</p>
               <div className="mt-6 grid gap-3">
                 {socialLinks.map((item) => {
@@ -156,7 +156,7 @@ function ContactPage() {
                   )
                 })}
               </div>
-            </div>
+            </PanelCard>
 
             <PanelCard variant="surface" className="p-8 shadow-soft">
               <p className="text-sm uppercase tracking-[0.3em] text-primary">Office location</p>
