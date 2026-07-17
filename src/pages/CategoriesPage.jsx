@@ -8,6 +8,7 @@ const categories = [
     description: 'Creative AI-integrated tutorials and hands-on experiments.',
     count: '82 articles',
     icon: Code2,
+    
   },
   {
     title: 'Traditional Coding',
